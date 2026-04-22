@@ -3,60 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maia Diamond</title>
+    <title>Maia Diamond | Yakında</title>
     <style>
+        /* Temel Ayarlar */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body, html {
-            height: 100%;
-            width: 100%;
-        }
-
         body {
-            /* Senin logon olan logo.jpeg dosyasını arka plan yapıyoruz */
-            background: url('logo.jpeg') no-repeat center center fixed;
-            background-size: cover; /* Resmi tüm ekrana yayar */
-            
+            background-color: #0a0a0a; /* Derin siyah arka plan */
+            height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'serif'; /* Klasik ve lüks bir font */
+            color: #ffffff;
+            overflow: hidden;
         }
 
-        /* Yazının logonun üzerinde net okunması için şık bir kutu */
-        .message-box {
-            background: rgba(0, 0, 0, 0.3); /* Çok hafif bir karartma */
-            padding: 20px 40px;
-            border-radius: 2px;
-            text-align: center;
+        /* Logo Ayarları */
+        .logo-container {
+            margin-bottom: 40px;
+            animation: fadeIn 2s ease-in-out;
         }
 
+        .logo-container img {
+            max-width: 300px;
+            height: auto;
+            /* Logoya hafif bir mücevher parıltısı efekti */
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
+        }
+
+        /* Yazı Ayarları */
         h1 {
-            color: #f1f1f1;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 300;
-            letter-spacing: 6px;
+            letter-spacing: 8px; /* Harf arası açma, premium hava katar */
             text-transform: uppercase;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+            color: #d4af37; /* Altın sarısı tonu */
+            text-align: center;
+            animation: slideUp 1.5s ease-out;
         }
 
+        /* Çizgi Detayı */
+        .divider {
+            width: 50px;
+            height: 1px;
+            background-color: #d4af37;
+            margin-top: 20px;
+            animation: stretch 2s ease-in-out;
+        }
+
+        /* Animasyonlar */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes stretch {
+            from { width: 0; }
+            to { width: 50px; }
+        }
+
+        /* Mobil Uyumluluk */
         @media (max-width: 600px) {
-            h1 {
-                font-size: 1.2rem;
-                letter-spacing: 3px;
-            }
+            h1 { font-size: 1rem; letter-spacing: 4px; }
+            .logo-container img { max-width: 200px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="message-box">
-        <h1>Sitemiz çok yakında sizlerle</h1>
+    <div class="logo-container">
+        <img src="logo.jpeg" alt="Maia Diamond Logo">
     </div>
+
+    <h1>Sitemiz çok yakında sizlerle</h1>
+    
+    <div class="divider"></div>
 
 </body>
 </html>
